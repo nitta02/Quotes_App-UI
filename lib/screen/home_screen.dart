@@ -1,10 +1,15 @@
-// ignore_for_file: avoid_unnecessary_containers, constant_identifier_names, prefer_const_constructors
+// ignore_for_file: avoid_unnecessary_containers, constant_identifier_names, prefer_const_constructors, duplicate_ignore, recursive_getters, unused_import, sized_box_for_whitespace
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotes_app/catagory_screen/catagory_title.dart';
+import 'package:quotes_app/constants/catagory_list.dart';
 import 'package:quotes_app/constants/images_lists.dart';
 import 'package:quotes_app/constants/text_const.dart';
-import 'package:quotes_app/screen/drawer_option.dart';
+import 'package:quotes_app/catagory_screen/catagory_img_constants.dart';
+import 'package:quotes_app/drawer/drawer_option.dart';
+import 'package:quotes_app/drawer/drawer_screen.dart';
+import 'package:quotes_app/catagory_screen/catagory_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,128 +19,98 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-const Color Colorchng = Colors.red;
-
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        // ignore: prefer_const_constructors
-        child: Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Quotes Life",
+        title: Text(
+          "Quotes_Life",
           style: TextStyle(
-            letterSpacing: 2.5,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.85,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              CupertinoIcons.search_circle,
+            ),
+            iconSize: 30,
+          )
+        ],
         centerTitle: true,
       ),
-      body: SafeArea(
-        child: ListView.builder(
-          itemCount: perImages.length,
-          itemBuilder: (context, index) {
-            return Card(
-              shape: Border.all(
-                color: Colors.grey,
-              ),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage(
-                    perImages[index],
-                  ),
-                ),
-                title: Text(
-                  quotesName[index],
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                subtitle: Text(quotesPersons[index]),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.favorite),
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-
-      //Drawer Part----------------------------------------
-      drawer: Drawer(
-        backgroundColor: Colors.tealAccent,
-        child: ListView(
+      body: SingleChildScrollView(
+        child: Column(
           children: [
-            DrawerHeader(
-              curve: Curves.bounceInOut,
-              decoration: BoxDecoration(
-                  // ignore: prefer_const_literals_to_create_immu
-                  ),
-              child: Column(children: [
-                Row(
-                  children: [
-                    Container(
-                      child: const CircleAvatar(
-                        backgroundImage: AssetImage('images/profile1.jpg'),
-                        maxRadius: 42,
+            // Container(
+            //   height: context.screenHeight / 5,
+            //   child: SingleChildScrollView(
+            //     scrollDirection: Axis.horizontal,
+            //     child: Row(
+            //       children: List.generate(
+            //           3,
+            //           (index) => Column(
+            //                 children: [
+            //                   Container(
+            //                       height: context.screenHeight * 0.18,
+            //                       child: Row(
+            //                           mainAxisAlignment:
+            //                               MainAxisAlignment.spaceEvenly,
+            //                           children: [
+            //                             Image.asset(transparentImages[index])
+            //                           ])),
+            //                   10.heightBox,
+            //                   Text(catagoryLists[index])
+            //                 ],
+            //               )),
+            //     ),
+            //   ),
+            // ),
+            10.heightBox,
+            Row(children: [
+              Padding(
+                  padding: EdgeInsets.only(left: 10.0),
+                  child: "Popular Quotes"
+                      .text
+                      .bold
+                      .letterSpacing(1.8)
+                      .size(20)
+                      .make()),
+              10.widthBox,
+              Icon(
+                CupertinoIcons.list_bullet,
+                size: 20,
+              )
+            ]).box.outerShadowXl.make(),
+            Container(
+              height: context.screenHeight / 1.5,
+              child: ListView.builder(
+                itemCount: perImages.length,
+                itemBuilder: (context, index) => Card(
+                  margin: EdgeInsets.all(10.0),
+                  elevation: 15.5,
+                  shadowColor: Colors.black,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(
+                        perImages[index],
                       ),
                     ),
-                    15.widthBox,
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        const Text(
-                          "Flutter TS",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.8,
-                          ),
-                        ),
-                        const Text(
-                          "ts@gmail.com",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            letterSpacing: 1.8,
-                          ),
-                        ),
-                      ],
+                    title: Text(quotesName[index]),
+                    subtitle: Text(
+                      quotesPersons[index],
                     ),
-                  ],
+                  ),
                 ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: OutlinedButton(
-                      style: ButtonStyle(
-                          foregroundColor: MaterialStatePropertyAll(
-                        Colors.black,
-                      )),
-                      onPressed: () {},
-                      child: Text(
-                        'Logout',
-                        style: TextStyle(
-                          color: Colors.black,
-                          letterSpacing: 1.8,
-                        ),
-                      )),
-                )
-              ]),
-            ).box.shadowSm.make(),
-            20.heightBox,
-            Column(
-              // ignore: prefer_const_literals_to_create_immutables
-              children: List.generate(
-                  4,
-                  (index) => drawerOption(
-                        iconn[index],
-                        titlee[index],
-                        () {},
-                      )),
+              ),
             )
           ],
         ),
       ),
-    ));
+      drawer: drawer(),
+    );
   }
 }
