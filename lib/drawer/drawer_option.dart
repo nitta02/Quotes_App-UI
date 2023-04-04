@@ -1,24 +1,41 @@
-// ignore_for_file: camel_case_types
-
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first, avoid_unnecessary_containers
+// ignore_for_file: camel_case_types, prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
 
-const iconn = [
-  Icon(CupertinoIcons.home),
-  Icon(Icons.explore),
-  Icon(CupertinoIcons.settings),
-  Icon(Icons.contact_mail)
-];
+import 'package:quotes_app/drawer/drawer_constant.dart';
 
-const titlee = ["Home", "Explore", "Setting", "Contact us"];
-
-Widget drawerOption(dynamic iconn, String titlee, dynamic onTapp) {
-  return ListTile(
-    onTap: onTapp,
-    leading: iconn,
-    hoverColor: Colors.white,
-    
-    title: titlee.text.bold.letterSpacing(1.8).make(),
+Widget drawerOption() {
+  return SizedBox(
+    height: 400,
+    child: ListView.builder(
+      itemCount: titlee.length,
+      itemBuilder: (context, index) {
+        return optionDrawers(
+          iconnn: drawerIconn[index],
+          titlee: titlee[index],
+        );
+      },
+    ),
   );
+}
+
+class optionDrawers extends StatelessWidget {
+  const optionDrawers({
+    Key? key,
+    required this.iconnn,
+    required this.titlee,
+  }) : super(key: key);
+
+  final IconData iconnn;
+  final String titlee;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(iconnn),
+      title: Text(titlee),
+      hoverColor: Colors.white70,
+      onTap: () {},
+    );
+  }
 }

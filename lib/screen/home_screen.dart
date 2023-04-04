@@ -45,31 +45,59 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Container(
-            //   height: context.screenHeight / 5,
-            //   child: SingleChildScrollView(
-            //     scrollDirection: Axis.horizontal,
-            //     child: Row(
-            //       children: List.generate(
-            //           3,
-            //           (index) => Column(
-            //                 children: [
-            //                   Container(
-            //                       height: context.screenHeight * 0.18,
-            //                       child: Row(
-            //                           mainAxisAlignment:
-            //                               MainAxisAlignment.spaceEvenly,
-            //                           children: [
-            //                             Image.asset(transparentImages[index])
-            //                           ])),
-            //                   10.heightBox,
-            //                   Text(catagoryLists[index])
-            //                 ],
-            //               )),
-            //     ),
-            //   ),
-            // ),
-            10.heightBox,
+            5.heightBox,
+            Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Padding(
+                  padding: EdgeInsets.only(left: 10.0),
+                  child: "Quotes Catagory"
+                      .text
+                      .bold
+                      .letterSpacing(1.8)
+                      .size(20)
+                      .make()),
+              Icon(CupertinoIcons.app_badge_fill)
+            ]).box.outerShadowLg.make(),
+            5.heightBox,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                    transparentImages.length,
+                    (index) => Padding(
+                          padding: EdgeInsets.only(left: 5.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: context.screenHeight / 4.5,
+                                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                                child: InkWell(
+                                  onTap: () {
+                                    print(transparentImages[index]);
+                                  },
+                                  child: Image.asset(
+                                    transparentImages[index],
+                                    fit: BoxFit.fill,
+                                  ).box.shadow2xl.make(),
+                                ),
+                              ),
+                              10.heightBox,
+                              Container(
+                                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Text(
+                                  catagoryLists[index],
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1.8,
+                                  ),
+                                ),
+                              ).box.outerShadowLg.make()
+                            ],
+                          ),
+                        )),
+              ),
+            ),
+            15.heightBox,
             Row(children: [
               Padding(
                   padding: EdgeInsets.only(left: 10.0),

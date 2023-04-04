@@ -1,7 +1,7 @@
-// ignore_for_file: avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
+import 'package:quotes_app/drawer/drawer_constant.dart';
 import 'package:quotes_app/drawer/drawer_option.dart';
+import 'package:quotes_app/screen/home_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 Widget drawer() {
@@ -18,11 +18,9 @@ Widget drawer() {
           child: Column(children: [
             Row(
               children: [
-                Container(
-                  child: const CircleAvatar(
-                    backgroundImage: AssetImage('images/profile1.jpg'),
-                    maxRadius: 42,
-                  ),
+                const CircleAvatar(
+                  backgroundImage: AssetImage('images/profile1.jpg'),
+                  maxRadius: 42,
                 ),
                 15.widthBox,
                 Column(
@@ -66,16 +64,7 @@ Widget drawer() {
           ]),
         ).box.shadowSm.make(),
         20.heightBox,
-        Column(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: List.generate(
-              4,
-              (index) => drawerOption(
-                    iconn[index],
-                    titlee[index],
-                    () {},
-                  )),
-        )
+        drawerOption(),
       ],
     ),
   );
