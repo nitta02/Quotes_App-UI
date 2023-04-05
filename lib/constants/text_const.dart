@@ -66,3 +66,7 @@ const quotesPersons = [
   timRice,
   maryEngelbrei
 ];
+
+//====================Explore Page==============
+const steveeJobs =
+    "Your time is limited, so don't waste it living someone else's life. Don't................";

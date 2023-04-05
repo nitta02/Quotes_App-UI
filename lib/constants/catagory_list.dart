@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 const catagory1 = "Sad";
 const catagory2 = "Happy";
