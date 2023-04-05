@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class catagoryPage extends StatefulWidget {
-  const catagoryPage({super.key});
+class catagoryMainPage extends StatefulWidget {
+  const catagoryMainPage({super.key});
 
   @override
-  State<catagoryPage> createState() => _catagoryPageState();
+  State<catagoryMainPage> createState() => _catagoryMainPageState();
 }
 
-class _catagoryPageState extends State<catagoryPage> {
+class _catagoryMainPageState extends State<catagoryMainPage> {
   @override
   Widget build(BuildContext context) {
     return Container(

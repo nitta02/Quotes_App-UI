@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:quotes_app/screen/splash_screen.dart';
+import 'package:quotes_app/screen/splash_screen/splash_screen.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());

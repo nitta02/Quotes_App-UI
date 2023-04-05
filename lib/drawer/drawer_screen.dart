@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quotes_app/drawer/drawer_constant.dart';
 import 'package:quotes_app/drawer/drawer_option.dart';
-import 'package:quotes_app/screen/home_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 Widget drawer() {
