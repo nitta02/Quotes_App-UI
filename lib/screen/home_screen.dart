@@ -10,11 +10,11 @@ import 'package:quotes_app/catagory_screen/catagory_img_constants.dart';
 import 'package:quotes_app/drawer/drawer_option.dart';
 import 'package:quotes_app/drawer/drawer_screen.dart';
 import 'package:quotes_app/catagory_screen/catagory_screen.dart';
+import 'package:quotes_app/screen/catagory_page.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
+  const HomeScreen({Key? key}) : super(key: key);
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -73,7 +73,57 @@ class _HomeScreenState extends State<HomeScreen> {
                                 margin: EdgeInsets.symmetric(horizontal: 5.0),
                                 child: InkWell(
                                   onTap: () {
-                                    print(transparentImages[index]);
+                                    switch (index) {
+                                      case 0:
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    catagory_Page()));
+
+                                        break;
+                                      case 1:
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  catagory_Page(),
+                                            ));
+                                        break;
+                                      case 2:
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  catagory_Page(),
+                                            ));
+                                        break;
+                                      case 3:
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  catagory_Page(),
+                                            ));
+
+                                        break;
+                                      case 4:
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  catagory_Page(),
+                                            ));
+                                        break;
+                                      case 5:
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  catagory_Page(),
+                                            ));
+                                        break;
+                                    }
                                   },
                                   child: Image.asset(
                                     transparentImages[index],

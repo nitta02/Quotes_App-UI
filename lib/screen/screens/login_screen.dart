@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables, avoid_print, unrelated_type_equality_checks
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quotes_app/screen/home_screen.dart';
@@ -32,12 +32,11 @@ class _loginScreenState extends State<loginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 55,
+                    height: 60,
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(color: Color.fromARGB(255, 101, 98, 98))
                       ],
-                      borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: TextFormField(
                       decoration: InputDecoration(
@@ -52,16 +51,21 @@ class _loginScreenState extends State<loginScreen> {
                             fontWeight: FontWeight.w400,
                             letterSpacing: 1.8,
                           )),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Kindly Enter E-mail";
+                        }
+                        return null;
+                      },
                     ),
                   ),
-                  15.heightBox,
+                  25.heightBox,
                   Container(
-                    height: 55,
+                    height: 60,
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(color: Color.fromARGB(255, 101, 98, 98))
                       ],
-                      borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: TextFormField(
                       decoration: InputDecoration(
@@ -74,21 +78,29 @@ class _loginScreenState extends State<loginScreen> {
                             fontWeight: FontWeight.w400,
                             letterSpacing: 1.8,
                           )),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Kindly Enter Password";
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   50.heightBox,
                   OutlinedButton(
                       onLongPress: () {},
                       style: ButtonStyle(
-                          minimumSize: MaterialStatePropertyAll(Size(150, 45)),
+                          minimumSize: MaterialStatePropertyAll(Size(450, 45)),
                           backgroundColor: MaterialStatePropertyAll(
                               Color.fromARGB(255, 101, 98, 98))),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
-                            ));
+                        if (_formKey.currentState!.validate()) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomeScreen(),
+                              ));
+                        }
                       },
                       child: Text(
                         "Login",

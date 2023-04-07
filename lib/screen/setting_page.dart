@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 
 class setting_Page extends StatefulWidget {
@@ -10,6 +12,6 @@ class setting_Page extends StatefulWidget {
 class _setting_PageState extends State<setting_Page> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }
