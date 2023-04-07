@@ -15,6 +15,7 @@ const alber = "Albert Einstein";
 const maya = "Maya Angelou";
 const tim = "Tim Rice";
 const mary = "Mary Engelbrei";
+const gandhi = "Mahatma Gandhi";
 
 const quotesName = [
   stevjobs,
@@ -28,7 +29,8 @@ const quotesName = [
   alber,
   maya,
   tim,
-  mary
+  mary,
+  gandhi
 ];
 
 //=====================Quotes============================
@@ -53,6 +55,8 @@ const mayaAngelou =
     "I’ve learned that no matter what happens, or how bad it seems today, life does go on, and it will be better tomorrow.";
 const timRice = "The biggest lesson I had in my life was failure.";
 const maryEngelbrei = "Life’s too mysterious to take too serious.";
+const gandi =
+    "Learn as if you will live forever, live like you will die tomorrow.";
 
 const quotesPersons = [
   steveJobs,
@@ -64,7 +68,8 @@ const quotesPersons = [
   albertEinstein,
   mayaAngelou,
   timRice,
-  maryEngelbrei
+  maryEngelbrei,
+  gandi
 ];
 
 //====================Explore Page==============

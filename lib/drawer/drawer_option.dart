@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, avoid_unnecessary_containers
 // ignore_for_file: camel_case_types, prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:quotes_app/catagory_screen/catagory_main.dart';
 
 import 'package:quotes_app/drawer/drawer_constant.dart';
 import 'package:quotes_app/screen/catagory_page.dart';
