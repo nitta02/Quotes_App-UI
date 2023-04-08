@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:quotes_app/catagory_screen/catagory_img_constants.dart';
@@ -21,22 +21,34 @@ class _catagory_PageState extends State<catagory_Page> {
         title: "Catagory".text.letterSpacing(1.8).bold.make(),
       ),
       body: GridView.builder(
-        clipBehavior: Clip.antiAlias,
         gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        itemCount: transparentImages.length,
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemCount: catagoryLists.length,
         itemBuilder: (context, index) {
-          return SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Card(
-                child: Column(
+          return Card(
+            elevation: 15.0,
+            margin: EdgeInsets.all(15.0),
+            child: Column(
               children: [
-                Image.asset(
-                  transparentImages[index],
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  height: 140,
+                  child: Image.asset(
+                    transparentImages[index],
+                  ),
                 ),
-                Text(catagoryLists[index]),
+                Container(
+                  child: Text(
+                    catagoryLists[index],
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2.5,
+                    ),
+                  ),
+                ),
               ],
-            )),
+            ),
           );
         },
       ),
