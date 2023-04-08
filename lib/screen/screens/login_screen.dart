@@ -13,6 +13,17 @@ class loginScreen extends StatefulWidget {
 
 class _loginScreenState extends State<loginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +50,8 @@ class _loginScreenState extends State<loginScreen> {
                       ],
                     ),
                     child: TextFormField(
+                      controller: emailController,
+                      keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                           prefixIcon: Icon(
                             CupertinoIcons.mail_solid,
@@ -68,6 +81,9 @@ class _loginScreenState extends State<loginScreen> {
                       ],
                     ),
                     child: TextFormField(
+                      controller: passwordController,
+                      obscureText: true,
+                      keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                           prefixIcon: Icon(CupertinoIcons.lock_open),
                           prefixIconColor: Colors.white,
