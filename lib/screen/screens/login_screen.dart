@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quotes_app/screen/home_screen.dart';
+import 'package:quotes_app/screen/screens/signup_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class loginScreen extends StatefulWidget {
@@ -127,16 +128,27 @@ class _loginScreenState extends State<loginScreen> {
                         ),
                       )),
                   15.heightBox,
-                  "login with".text.size(15).make(),
-                  10.heightBox,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.phone),
-                      20.widthBox,
-                      Icon(Icons.phone),
-                      20.widthBox,
-                      Icon(Icons.phone)
+                      "Don't have any account ?"
+                          .text
+                          .color(Colors.white)
+                          .make(),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SignupPage(),
+                                ));
+                          },
+                          child: Text(
+                            "Sign up",
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ))
                     ],
                   )
                 ],
