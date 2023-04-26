@@ -11,6 +11,7 @@ import 'package:quotes_app/drawer/drawer_option.dart';
 import 'package:quotes_app/drawer/drawer_screen.dart';
 import 'package:quotes_app/catagory_screen/catagory_screen.dart';
 import 'package:quotes_app/screen/catagory_page.dart';
+import 'package:quotes_app/screen/quotes_list.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -57,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       .make()),
               Icon(CupertinoIcons.app_badge_fill)
             ]).box.outerShadowLg.make(),
-            5.heightBox,
+            15.heightBox,
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -172,6 +173,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   elevation: 15.5,
                   shadowColor: Colors.black,
                   child: ListTile(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => quotesList(),
+                          ));
+                    },
                     leading: CircleAvatar(
                       backgroundImage: AssetImage(
                         perImages[index],
