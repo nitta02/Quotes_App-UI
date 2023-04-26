@@ -19,7 +19,6 @@ class _loginScreenState extends State<loginScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     emailController.dispose();
     passwordController.dispose();
@@ -46,19 +45,20 @@ class _loginScreenState extends State<loginScreen> {
                   Container(
                     height: 60,
                     decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(color: Color.fromARGB(255, 101, 98, 98))
-                      ],
-                    ),
+                        borderRadius: BorderRadius.circular(10.0),
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.grey,
+                        )),
                     child: TextFormField(
                       controller: emailController,
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
+                          border: InputBorder.none,
                           prefixIcon: Icon(
                             CupertinoIcons.mail_solid,
                           ),
                           prefixIconColor: Colors.white,
-                          border: InputBorder.none,
                           hintText: "Enter Your E-mail",
                           hintStyle: TextStyle(
                             color: Colors.white,
@@ -77,9 +77,11 @@ class _loginScreenState extends State<loginScreen> {
                   Container(
                     height: 60,
                     decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(color: Color.fromARGB(255, 101, 98, 98))
-                      ],
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: TextFormField(
                       controller: passwordController,
@@ -133,6 +135,7 @@ class _loginScreenState extends State<loginScreen> {
                     children: [
                       "Don't have any account ?"
                           .text
+                          .letterSpacing(1.8)
                           .color(Colors.white)
                           .make(),
                       TextButton(
@@ -146,7 +149,8 @@ class _loginScreenState extends State<loginScreen> {
                           child: Text(
                             "Sign up",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 18,
+                              letterSpacing: 1.8,
                             ),
                           ))
                     ],
