@@ -38,13 +38,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   parallax_sensors_bg: ^1.0.1
   smooth_page_indicator: ^1.0.1
-  velocity_x: ^3.6.0
   firebase_auth: ^4.4.0
   firebase_core: ^2.9.0
   firebase_storage: ^11.1.0
   firebase_ui_auth: ^1.2.0
   fluttertoast: ^8.2.1
   shared_preferences: ^2.1.0
+  velocity_x: ^4.1.0
 
 dev_dependencies:
   flutter_test:
