@@ -1,9 +1,10 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables, avoid_print, unrelated_type_equality_checks
+// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables, avoid_print, unrelated_type_equality_checks, use_build_context_synchronously
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quotes_app/screen/home_screen.dart';
 import 'package:quotes_app/screen/screens/signup_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class loginScreen extends StatefulWidget {
   const loginScreen({super.key});
@@ -112,14 +113,21 @@ class _loginScreenState extends State<loginScreen> {
                           minimumSize: MaterialStatePropertyAll(Size(450, 45)),
                           backgroundColor: MaterialStatePropertyAll(
                               Color.fromARGB(255, 101, 98, 98))),
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomeScreen(),
-                              ));
-                        }
+                      onPressed: () async {
+                        SharedPreferences sp =
+                            await SharedPreferences.getInstance();
+                        sp.setString('email', emailController.text.toString());
+                        sp.setBool('isLogin', true);
+
+                        setState(() {
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomeScreen(),
+                                ));
+                          }
+                        });
                       },
                       child: Text(
                         "Login",

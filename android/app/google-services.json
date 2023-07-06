@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "351034544882",
-    "project_id": "quotesapp-58425",
-    "storage_bucket": "quotesapp-58425.appspot.com"
+    "project_number": "816262222216",
+    "project_id": "quotesapp-4378b",
+    "storage_bucket": "quotesapp-4378b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:351034544882:android:43d27eeec771d1f7c7366b",
+        "mobilesdk_app_id": "1:816262222216:android:db695ada651c4ce67bea3d",
         "android_client_info": {
           "package_name": "com.example.quotes_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "351034544882-jkqvc9ea0jps6t5p0dpfd2fmud8iarnd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.quotes_app",
-            "certificate_hash": "3d8d09eef975190b7c98d6df9d7cec3be1fcc765"
-          }
-        },
-        {
-          "client_id": "351034544882-tvgr45g9mriju9umj5u6978at8en662m.apps.googleusercontent.com",
+          "client_id": "816262222216-4nrfrbfpnhup4ao5bs747ah804kersaf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCVPyZy7onYrIV4ZdRq6NC-pSZEssr6cIE"
+          "current_key": "AIzaSyCjkw4YUTEwPlngGjidtbyBmf4vGn6AE88"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "351034544882-tvgr45g9mriju9umj5u6978at8en662m.apps.googleusercontent.com",
+              "client_id": "816262222216-4nrfrbfpnhup4ao5bs747ah804kersaf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
