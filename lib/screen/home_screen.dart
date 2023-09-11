@@ -10,6 +10,7 @@ import 'package:quotes_app/catagory_screen/catagory_img_constants.dart';
 import 'package:quotes_app/drawer/drawer_option.dart';
 import 'package:quotes_app/drawer/drawer_screen.dart';
 import 'package:quotes_app/catagory_screen/catagory_screen.dart';
+import 'package:quotes_app/model/api_model.dart';
 import 'package:quotes_app/screen/catagory_page.dart';
 import 'package:quotes_app/screen/quotes_list.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -199,4 +200,6 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: drawer(),
     );
   }
+
+
 }
